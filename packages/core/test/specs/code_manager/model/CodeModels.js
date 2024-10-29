@@ -68,7 +68,7 @@ describe('HtmlGenerator', () => {
       tagName: 'article',
     });
     m1.set('script', 'anything');
-    expect(obj.build(m1, {cleanId: true, em})).toEqual(`<article id="${m1.getId()}"></article>`);
+    expect(obj.build(m1, { cleanId: true, em })).toEqual(`<article id="${m1.getId()}"></article>`);
   });
 
   test('Build correctly component with id preserved when script-export is defined', () => {
@@ -76,7 +76,7 @@ describe('HtmlGenerator', () => {
       tagName: 'article',
     });
     m1.set('script-export', 'anything');
-    expect(obj.build(m1, {cleanId: true, em})).toEqual(`<article id="${m1.getId()}"></article>`);
+    expect(obj.build(m1, { cleanId: true, em })).toEqual(`<article id="${m1.getId()}"></article>`);
   });
 
   test('Build correctly component with id preserved when id is explicitly set ', () => {
@@ -84,14 +84,14 @@ describe('HtmlGenerator', () => {
       tagName: 'article',
     });
     m1.setId('i11');
-    expect(obj.build(m1, {cleanId: true, em})).toEqual(`<article id="i11"></article>`);
+    expect(obj.build(m1, { cleanId: true, em })).toEqual(`<article id="i11"></article>`);
   });
 
   test('Build correctly component with cleanId is enabled and id is not required ', () => {
     const m1 = comp.get('components').add({
       tagName: 'article',
     });
-    expect(obj.build(m1, {cleanId: true, em})).toEqual(`<article></article>`);
+    expect(obj.build(m1, { cleanId: true, em })).toEqual(`<article></article>`);
   });
 });
 
